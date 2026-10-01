@@ -1,0 +1,26 @@
+{
+  "name": "School Setup - Complete School & Outdoor Solutions",
+  "short_name": "School Setup",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A4C95",
+  "theme_color": "#0A4C95",
+  "description": "School furniture, playground equipment, and outdoor gym solutions for educational institutions, preschools, parks, and communities across Uttar Pradesh."
+}

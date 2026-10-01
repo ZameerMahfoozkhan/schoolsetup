@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visual Sitemap | School Setup</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --primary-blue: #0A4C95;
+    --primary-blue-dark: #073567;
+    --primary-blue-light: #EEF4FB;
+    --accent-orange: #F25C05;
+    --accent-orange-light: #FFF7ED;
+    --outdoor-green: #15803D;
+    --outdoor-green-light: #F0FDF4;
+    --text-dark: #0F172A;
+    --text-body: #334155;
+    --text-muted: #64748B;
+    --text-light: #94A3B8;
+    --bg-white: #FFFFFF;
+    --bg-surface: #F8FAFC;
+    --bg-alt: #F1F5F9;
+    --bg-dark: #0A192F;
+    --border-light: #E2E8F0;
+    --border-medium: #CBD5E1;
+    --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --shadow-sm: 0 2px 4px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+    --shadow-md: 0 6px 12px -2px rgba(15,23,42,0.08), 0 3px 6px -2px rgba(15,23,42,0.04);
+    --shadow-lg: 0 12px 24px -4px rgba(15,23,42,0.09), 0 6px 12px -4px rgba(15,23,42,0.04);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+    --transition-base: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html {
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-body);
+    background: var(--bg-surface);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--bg-surface);
+  }
+
+  /* ——— Top Bar (matching website) ——— */
+  .topbar {
+    background: var(--bg-dark);
+    color: #fff;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .topbar .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .topbar .dot {
+    width: 7px; height: 7px;
+    background: #22c55e;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ——— Header ——— */
+  .site-header {
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+    padding: 16px 0;
+  }
+  .site-header .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .site-header .logo-icon {
+    width: 40px; height: 40px;
+    background: var(--primary-blue);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  .site-header .logo-text {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.3px;
+  }
+  .site-header .logo-text span {
+    color: var(--primary-blue);
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    background: var(--primary-blue-light);
+    border: 1px solid rgba(10,76,149,0.12);
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+  }
+
+  /* ——— Page Hero ——— */
+  .page-hero {
+    background: var(--bg-white);
+    padding: 56px 0 48px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .page-hero .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .page-hero .label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-orange);
+    margin-bottom: 14px;
+  }
+  .page-hero h1 {
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .page-hero h1 span {
+    color: var(--primary-blue);
+  }
+  .page-hero p {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ——— Stats Strip ——— */
+  .stats-strip {
+    background: var(--primary-blue);
+    padding: 0;
+  }
+  .stats-strip .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .stat-item {
+    text-align: center;
+    padding: 20px 16px;
+    position: relative;
+  }
+  .stat-item + .stat-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 20%;
+    width: 1px; height: 60%;
+    background: rgba(255,255,255,0.15);
+  }
+  .stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+  }
+
+  /* ——— Main Content ——— */
+  .main-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 48px 1.5rem 80px;
+  }
+
+  /* ——— Root Node ——— */
+  .root-node {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+    position: relative;
+  }
+  .root-node::after {
+    content: '';
+    position: absolute;
+    bottom: -48px;
+    left: 50%;
+    width: 2px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--primary-blue), var(--border-light));
+  }
+  .root-card {
+    background: var(--bg-white);
+    border: 2px solid var(--primary-blue);
+    border-radius: var(--radius-xl);
+    padding: 24px 48px;
+    text-align: center;
+    box-shadow: var(--shadow-lg), 0 0 0 4px rgba(10,76,149,0.06);
+    position: relative;
+  }
+  .root-card .url {
+    font-size: 12px;
+    color: var(--primary-blue);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .root-card h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.3px;
+  }
+  .root-card .priority-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--outdoor-green);
+    background: var(--outdoor-green-light);
+    border: 1px solid #DCFCE7;
+    padding: 3px 12px;
+    border-radius: var(--radius-full);
+  }
+
+  /* ——— Section Groups ——— */
+  .sitemap-section {
+    margin-bottom: 48px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .section-icon {
+    width: 40px; height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-header h3 {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.3px;
+  }
+  .section-header .count-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: var(--bg-alt);
+    border: 1px solid var(--border-light);
+    padding: 3px 12px;
+    border-radius: var(--radius-full);
+  }
+
+  /* ——— Page Cards ——— */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .page-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+  }
+  .page-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    border-radius: 4px 0 0 4px;
+    transition: width var(--transition-base);
+  }
+  .page-card:hover {
+    border-color: var(--border-medium);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .page-card .card-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .page-card .card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+    letter-spacing: -0.2px;
+  }
+  .page-card .card-url {
+    font-size: 12px;
+    color: var(--text-light);
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    word-break: break-all;
+  }
+  .page-card .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+  }
+  .priority-pill {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .freq-pill {
+    font-size: 11px;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+
+  /* Section color themes */
+  .theme-blue .section-icon { background: var(--primary-blue-light); color: var(--primary-blue); }
+  .theme-blue .page-card::before { background: var(--primary-blue); }
+
+  .theme-green .section-icon { background: var(--outdoor-green-light); color: var(--outdoor-green); }
+  .theme-green .page-card::before { background: var(--outdoor-green); }
+
+  .theme-orange .section-icon { background: var(--accent-orange-light); color: var(--accent-orange); }
+  .theme-orange .page-card::before { background: var(--accent-orange); }
+
+  /* Priority pill colors */
+  .p-high { background: var(--outdoor-green-light); color: var(--outdoor-green); border: 1px solid #DCFCE7; }
+  .p-med  { background: var(--primary-blue-light); color: var(--primary-blue); border: 1px solid rgba(10,76,149,0.12); }
+
+  /* ——— Regional Hub ——— */
+  .regional-hub {
+    margin-top: 16px;
+  }
+  .regional-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .regional-header h2 {
+    font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+  }
+  .regional-header h2 span {
+    color: var(--primary-blue);
+  }
+  .regional-header p {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .city-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 860px) {
+    .city-columns { grid-template-columns: 1fr; }
+    .stats-strip .container { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .city-block {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-base);
+  }
+  .city-block:hover {
+    box-shadow: var(--shadow-md);
+  }
+  .city-header {
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .city-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .city-header h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.2px;
+  }
+  .city-header .city-count {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    background: var(--bg-alt);
+    padding: 3px 12px;
+    border-radius: var(--radius-full);
+  }
+  .city-links { padding: 6px 0; }
+  .city-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 22px;
+    transition: background var(--transition-base);
+  }
+  .city-link:hover {
+    background: var(--bg-surface);
+  }
+  .city-link-icon {
+    width: 32px; height: 32px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .city-link-text { flex: 1; min-width: 0; }
+  .city-link-text .link-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  .city-link-text .link-url {
+    font-size: 11px;
+    color: var(--text-light);
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* City colors */
+  .city-ayodhya .city-dot { background: var(--accent-orange); box-shadow: 0 0 8px rgba(242,92,5,0.3); }
+  .city-ayodhya .city-link-icon { background: var(--accent-orange-light); color: var(--accent-orange); }
+
+  .city-sultanpur .city-dot { background: var(--primary-blue); box-shadow: 0 0 8px rgba(10,76,149,0.3); }
+  .city-sultanpur .city-link-icon { background: var(--primary-blue-light); color: var(--primary-blue); }
+
+  .city-lucknow .city-dot { background: var(--outdoor-green); box-shadow: 0 0 8px rgba(21,128,61,0.3); }
+  .city-lucknow .city-link-icon { background: var(--outdoor-green-light); color: var(--outdoor-green); }
+
+  /* ——— Legend ——— */
+  .legend {
+    margin-top: 48px;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-xl);
+    padding: 24px 28px;
+    box-shadow: var(--shadow-sm);
+  }
+  .legend h4 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+  .legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-body);
+  }
+  .legend-swatch {
+    width: 14px; height: 14px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ——— Footer ——— */
+  .sitemap-footer {
+    background: var(--bg-dark);
+    padding: 24px 0;
+    text-align: center;
+    margin-top: 64px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+  }
+  .sitemap-footer strong {
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* ——— Animations ——— */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .root-node { animation: fadeUp 0.5s ease-out 0.1s both; }
+  .sitemap-section:nth-child(1) { animation: fadeUp 0.5s ease-out 0.15s both; }
+  .sitemap-section:nth-child(2) { animation: fadeUp 0.5s ease-out 0.25s both; }
+  .regional-hub { animation: fadeUp 0.5s ease-out 0.35s both; }
+  .legend { animation: fadeUp 0.5s ease-out 0.45s both; }
+</style>
+</head>
+<body>
+
+<!-- ——— Top Bar ——— -->
+<div class="topbar">
+  <div class="container">
+    <span class="dot"></span>
+    Site Architecture &nbsp;·&nbsp; 27 Pages &nbsp;·&nbsp; schoolsetup.in
+  </div>
+</div>
+
+<!-- ——— Site Header ——— -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">
+      <div class="logo-icon">S</div>
+      <div class="logo-text"><span>School</span> Setup</div>
+    </a>
+    <div class="header-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Visual Sitemap
+    </div>
+  </div>
+</header>
+
+<!-- ——— Hero ——— -->
+<section class="page-hero">
+  <div class="container">
+    <div class="label">📐 Site Architecture</div>
+    <h1>Visual <span>Sitemap</span></h1>
+    <p>Complete page hierarchy and URL structure for schoolsetup.in — all 27 pages organized by category</p>
+  </div>
+</section>
+
+<!-- ——— Stats Strip ——— -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stat-item">
+      <div class="stat-value">27</div>
+      <div class="stat-label">Total Pages</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">6</div>
+      <div class="stat-label">Core Pages</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">5</div>
+      <div class="stat-label">Product Hubs</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">15</div>
+      <div class="stat-label">City Pages</div>
+    </div>
+  </div>
+</div>
+
+<!-- ——— Main Content ——— -->
+<main class="main-content">
+
+  <!-- Root Node -->
+  <div class="root-node">
+    <div class="root-card">
+      <div class="url">schoolsetup.in</div>
+      <h2>🏠 Homepage</h2>
+      <span class="priority-tag">Priority 1.0 · Weekly</span>
+    </div>
+  </div>
+
+  <!-- Core Pages -->
+  <div class="sitemap-section theme-blue">
+    <div class="section-header">
+      <div class="section-icon">📄</div>
+      <h3>Core Pages</h3>
+      <span class="count-badge">6 pages</span>
+    </div>
+    <div class="cards-grid">
+      <div class="page-card">
+        <div class="card-icon">ℹ️</div>
+        <div class="card-title">About Us</div>
+        <div class="card-url">/about/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-med">0.8</span>
+          <span class="freq-pill">Monthly</span>
+        </div>
+      </div>
+      <div class="page-card">
+        <div class="card-icon">📞</div>
+        <div class="card-title">Contact</div>
+        <div class="card-url">/contact/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-med">0.8</span>
+          <span class="freq-pill">Monthly</span>
+        </div>
+      </div>
+      <div class="page-card">
+        <div class="card-icon">📝</div>
+        <div class="card-title">Request a Quote</div>
+        <div class="card-url">/request-a-quote/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-high">0.9</span>
+          <span class="freq-pill">Weekly</span>
+        </div>
+      </div>
+      <div class="page-card">
+        <div class="card-icon">📸</div>
+        <div class="card-title">Our Projects</div>
+        <div class="card-url">/projects/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-med">0.8</span>
+          <span class="freq-pill">Monthly</span>
+        </div>
+      </div>
+      <div class="page-card">
+        <div class="card-icon">📍</div>
+        <div class="card-title">Locations</div>
+        <div class="card-url">/locations/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-med">0.8</span>
+          <span class="freq-pill">Monthly</span>
+        </div>
+      </div>
+      <div class="page-card">
+        <div class="card-icon">🏫</div>
+        <div class="card-title">Complete School Setup</div>
+        <div class="card-url">/complete-school-setup/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-high">0.9</span>
+          <span class="freq-pill">Weekly</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Hubs -->
+  <div class="sitemap-section theme-green">
+    <div class="section-header">
+      <div class="section-icon">🏷️</div>
+      <h3>Product &amp; Solution Hubs</h3>
+      <span class="count-badge">5 hubs</span>
+    </div>
+    <div class="cards-grid">
+      <div class="page-card">
+        <div class="card-icon">🪑</div>
+        <div class="card-title">School Furniture</div>
+        <div class="card-url">/school-furniture/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-high">0.9</span>
+          <span class="freq-pill">Weekly</span>
+        </div>
+      </div>
+      <div class="page-card">
+        <div class="card-icon">🎠</div>
+        <div class="card-title">Playground Equipment</div>
+        <div class="card-url">/playground-equipment/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-high">0.9</span>
+          <span class="freq-pill">Weekly</span>
+        </div>
+      </div>
+      <div class="page-card">
+        <div class="card-icon">🏋️</div>
+        <div class="card-title">Outdoor Gym Equipment</div>
+        <div class="card-url">/outdoor-gym-equipment/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-high">0.9</span>
+          <span class="freq-pill">Weekly</span>
+        </div>
+      </div>
+      <div class="page-card">
+        <div class="card-icon">🧒</div>
+        <div class="card-title">Kids Furniture</div>
+        <div class="card-url">/kids-furniture/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-high">0.9</span>
+          <span class="freq-pill">Weekly</span>
+        </div>
+      </div>
+      <div class="page-card">
+        <div class="card-icon">🏗️</div>
+        <div class="card-title">School Infrastructure</div>
+        <div class="card-url">/school-infrastructure/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-high">0.9</span>
+          <span class="freq-pill">Weekly</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Regional City Pages -->
+  <div class="regional-hub">
+    <div class="regional-header">
+      <h2>📍 Regional <span>City Pages</span></h2>
+      <p>Location-specific landing pages for local SEO — 5 pages per city</p>
+    </div>
+
+    <div class="city-columns">
+
+      <!-- Ayodhya -->
+      <div class="city-block city-ayodhya">
+        <div class="city-header">
+          <div class="city-dot"></div>
+          <h4>Ayodhya</h4>
+          <span class="city-count">5 pages</span>
+        </div>
+        <div class="city-links">
+          <div class="city-link">
+            <div class="city-link-icon">🪑</div>
+            <div class="city-link-text">
+              <div class="link-title">School Furniture</div>
+              <div class="link-url">/school-furniture-ayodhya/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🎠</div>
+            <div class="city-link-text">
+              <div class="link-title">Playground Equipment</div>
+              <div class="link-url">/playground-equipment-ayodhya/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🏋️</div>
+            <div class="city-link-text">
+              <div class="link-title">Outdoor Gym</div>
+              <div class="link-url">/outdoor-gym-ayodhya/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🧒</div>
+            <div class="city-link-text">
+              <div class="link-title">Kids Furniture</div>
+              <div class="link-url">/kids-furniture-ayodhya/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🏫</div>
+            <div class="city-link-text">
+              <div class="link-title">School Setup</div>
+              <div class="link-url">/school-setup-ayodhya/</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sultanpur -->
+      <div class="city-block city-sultanpur">
+        <div class="city-header">
+          <div class="city-dot"></div>
+          <h4>Sultanpur</h4>
+          <span class="city-count">5 pages</span>
+        </div>
+        <div class="city-links">
+          <div class="city-link">
+            <div class="city-link-icon">🪑</div>
+            <div class="city-link-text">
+              <div class="link-title">School Furniture</div>
+              <div class="link-url">/school-furniture-sultanpur/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🎠</div>
+            <div class="city-link-text">
+              <div class="link-title">Playground Equipment</div>
+              <div class="link-url">/playground-equipment-sultanpur/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🏋️</div>
+            <div class="city-link-text">
+              <div class="link-title">Outdoor Gym</div>
+              <div class="link-url">/outdoor-gym-sultanpur/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🧒</div>
+            <div class="city-link-text">
+              <div class="link-title">Kids Furniture</div>
+              <div class="link-url">/kids-furniture-sultanpur/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🏫</div>
+            <div class="city-link-text">
+              <div class="link-title">School Setup</div>
+              <div class="link-url">/school-setup-sultanpur/</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lucknow -->
+      <div class="city-block city-lucknow">
+        <div class="city-header">
+          <div class="city-dot"></div>
+          <h4>Lucknow</h4>
+          <span class="city-count">5 pages</span>
+        </div>
+        <div class="city-links">
+          <div class="city-link">
+            <div class="city-link-icon">🪑</div>
+            <div class="city-link-text">
+              <div class="link-title">School Furniture</div>
+              <div class="link-url">/school-furniture-lucknow/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🎠</div>
+            <div class="city-link-text">
+              <div class="link-title">Playground Equipment</div>
+              <div class="link-url">/playground-equipment-lucknow/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🏋️</div>
+            <div class="city-link-text">
+              <div class="link-title">Outdoor Gym</div>
+              <div class="link-url">/outdoor-gym-lucknow/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🧒</div>
+            <div class="city-link-text">
+              <div class="link-title">Kids Furniture</div>
+              <div class="link-url">/kids-furniture-lucknow/</div>
+            </div>
+          </div>
+          <div class="city-link">
+            <div class="city-link-icon">🏫</div>
+            <div class="city-link-text">
+              <div class="link-title">School Setup</div>
+              <div class="link-url">/school-setup-lucknow/</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <h4>Legend</h4>
+    <div class="legend-items">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: var(--primary-blue);"></div>
+        Core Pages
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: var(--outdoor-green);"></div>
+        Product Hubs
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: var(--accent-orange);"></div>
+        Ayodhya
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: var(--primary-blue);"></div>
+        Sultanpur
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: var(--outdoor-green);"></div>
+        Lucknow
+      </div>
+      <div class="legend-item">
+        <span class="priority-pill p-high">0.9</span>
+        High Priority
+      </div>
+      <div class="legend-item">
+        <span class="priority-pill p-med">0.8</span>
+        Medium Priority
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ——— Footer ——— -->
+<footer class="sitemap-footer">
+  <p>Generated from <strong>sitemap.xml</strong> &nbsp;·&nbsp; 27 pages &nbsp;·&nbsp; <strong>schoolsetup.in</strong></p>
+</footer>
+
+</body>
+</html>
