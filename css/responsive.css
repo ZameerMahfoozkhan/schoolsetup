@@ -43,15 +43,86 @@
     max-width: 680px;
     margin: 0 auto;
     width: 100%;
+    min-height: auto;
+    justify-content: flex-start;
   }
 
   .hero-image-wrapper img {
     height: 400px;
   }
 
-  .trust-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
+  /* Trust Strip: Continuous Horizontal Train Marquee to save vertical space */
+  .trust-strip {
+    padding: 0.65rem 0;
+  }
+
+  .trust-container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .trust-train-wrapper {
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 4%, #000 96%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 4%, #000 96%, transparent 100%);
+  }
+
+  .trust-train-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    animation: trustTrainScroll 26s linear infinite;
+  }
+
+  .trust-train-track:hover,
+  .trust-train-track:active,
+  .trust-train-track.is-paused {
+    animation-play-state: paused;
+  }
+
+  .trust-train-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 1rem;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .trust-train-clone {
+    display: flex;
+  }
+
+  .trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+  }
+
+  .trust-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .trust-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .trust-label {
+    font-size: 0.825rem;
+    font-weight: 700;
   }
 
   .products-grid,
@@ -129,51 +200,105 @@
   }
 
   .hero-home {
-    padding: 2rem 0 3rem 0;
+    padding: 1.75rem 0 2rem 0;
+    min-height: auto;
+    background-image: 
+      linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.97) 0%, 
+        rgba(255, 255, 255, 0.94) 75%, 
+        rgba(255, 255, 255, 0.90) 100%),
+      url('../assets/images/hero.png');
+    background-size: cover;
+    background-position: center 20%;
+  }
+
+  .hero-badge-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-location-badge {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .hero-badge-row .section-tag {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
   }
 
   .hero-h1 {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 6.5vw, 2.15rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.75rem;
   }
 
   .hero-desc {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.15rem;
+    color: var(--text-body);
   }
 
   .hero-cta-group {
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+    margin-bottom: 1rem;
   }
 
   .hero-cta-group .btn {
     width: 100%;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+    border-radius: var(--radius-md);
   }
 
-  .hero-image-wrapper img {
-    height: 300px;
+  .hero-cta-group .btn-whatsapp svg {
+    width: 17px;
+    height: 17px;
   }
 
-  .hero-floating-card {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin-top: 1rem;
-    max-width: 100%;
+  .hero-trust-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+    padding: 0.65rem 0.75rem;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(10, 76, 149, 0.12);
+    border-radius: var(--radius-md);
   }
 
-  .hero-bulk-box {
-    flex-direction: column;
-    align-items: flex-start;
+  .hero-trust-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    gap: 0.3rem;
+    color: var(--text-dark);
   }
 
-  .hero-bulk-box .btn {
-    width: 100%;
+  .hero-trust-pill svg {
+    width: 13px;
+    height: 13px;
   }
 
-  .trust-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  /* Desktop-only secondary CTA blocks hidden on mobile to declutter hero */
+  .hero-bulk-box,
+  .hero-media {
+    display: none;
   }
 
   .category-cards-grid {
@@ -217,21 +342,9 @@
     grid-template-columns: 1fr;
   }
 
-  /* Floating WhatsApp Adjustments on Mobile */
+  /* On mobile with sticky dock active, hide the floating circular WhatsApp button to prevent clutter */
   .floating-whatsapp {
-    bottom: 5rem;
-    right: 1.25rem;
-    padding: 0.65rem;
-    border-radius: 50%;
-  }
-
-  .floating-whatsapp .floating-whatsapp-tooltip {
     display: none;
-  }
-
-  .floating-whatsapp svg {
-    width: 32px;
-    height: 32px;
   }
 
   /* Show Mobile Sticky CTA Dock */
@@ -303,10 +416,6 @@
     font-size: 0.9rem;
   }
 
-  .trust-grid {
-    grid-template-columns: 1fr;
-  }
-
   .faq-header {
     padding: 1rem 1.15rem;
     font-size: 0.95rem;
@@ -335,6 +444,19 @@
     font-size: 1.55rem;
   }
 
+  .hero-cta-group .btn {
+    font-size: 0.775rem;
+    padding: 0.65rem 0.35rem;
+  }
+
+  .hero-trust-bar {
+    padding: 0.5rem 0.65rem;
+  }
+
+  .hero-trust-pill {
+    font-size: 0.685rem;
+  }
+
   .mobile-cta-btn {
     font-size: 0.65rem;
     padding: 0.45rem 0.2rem;
@@ -343,5 +465,34 @@
   .mobile-cta-btn svg {
     width: 15px;
     height: 15px;
+  }
+}
+
+/* ==========================================================================
+   TRUST STRIP HORIZONTAL TRAIN ANIMATION
+   ========================================================================== */
+@keyframes trustTrainScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-train-track {
+    animation: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding: 0 1rem;
+    scrollbar-width: none;
+  }
+  .trust-train-track::-webkit-scrollbar {
+    display: none;
+  }
+  .trust-train-clone {
+    display: none;
   }
 }

@@ -88,25 +88,37 @@
   border-color: var(--primary-blue);
 }
 
-.product-image-box {
+.product-image-box,
+.product-image-wrap {
   position: relative;
-  height: 220px;
-  background-color: var(--bg-surface);
+  height: 240px;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-light);
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
 }
 
-.product-image-box img {
+.product-image-box img,
+.product-image-wrap img,
+.product-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.3s ease;
 }
 
-.product-card:hover .product-image-box img {
-  transform: scale(1.05);
+.product-card:hover .product-image-box img,
+.product-card:hover .product-image-wrap img,
+.product-card:hover .product-image {
+  transform: scale(1.02);
 }
 
-.product-category-tag {
+.product-category-tag,
+.product-badge {
   position: absolute;
   top: 0.85rem;
   left: 0.85rem;
@@ -119,9 +131,11 @@
   backdrop-filter: blur(4px);
   color: var(--text-white);
   border-radius: var(--radius-full);
+  z-index: 2;
 }
 
-.product-card-body {
+.product-card-body,
+.product-content {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -136,7 +150,8 @@
   line-height: 1.3;
 }
 
-.product-description {
+.product-description,
+.product-desc {
   font-size: 0.9rem;
   color: var(--text-body);
   line-height: 1.55;
@@ -145,14 +160,16 @@
 }
 
 /* Specs Badges on Product Cards */
-.product-specs-list {
+.product-specs-list,
+.product-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
   margin-bottom: 1.5rem;
 }
 
-.spec-badge {
+.spec-badge,
+.product-tag {
   font-size: 0.775rem;
   font-weight: 600;
   padding: 0.25rem 0.55rem;
@@ -162,15 +179,18 @@
   border: 1px solid var(--border-light);
 }
 
-.product-card-actions {
+.product-card-actions,
+.product-footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.65rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border-light);
+  margin-top: auto;
 }
 
-.product-card-actions .btn {
+.product-card-actions .btn,
+.product-footer .btn {
   padding: 0.65rem 0.5rem;
   font-size: 0.85rem;
 }

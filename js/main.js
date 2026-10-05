@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initDynamicContactLinks();
   initQuickQuoteModal();
   initAnalyticsTracking();
+  initTrustStripTrain();
 });
 
 /**
@@ -142,3 +143,25 @@ function initAnalyticsTracking() {
     });
   });
 }
+
+/**
+ * Trust Strip Mobile Train Interaction
+ * Handles touch pause/resume smoothly without preventing vertical page scrolls
+ */
+function initTrustStripTrain() {
+  const track = document.querySelector(".trust-train-track");
+  if (!track) return;
+
+  track.addEventListener("touchstart", () => {
+    track.classList.add("is-paused");
+  }, { passive: true });
+
+  track.addEventListener("touchend", () => {
+    track.classList.remove("is-paused");
+  }, { passive: true });
+
+  track.addEventListener("touchcancel", () => {
+    track.classList.remove("is-paused");
+  }, { passive: true });
+}
+

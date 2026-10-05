@@ -656,11 +656,24 @@ p:last-child {
    HOMEPAGE HERO SECTION
    ========================================================================== */
 .hero-home {
-  padding: 3.5rem 0 4.5rem 0;
-  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+  padding: 3.25rem 0 3.75rem 0;
+  min-height: 520px;
+  background-color: #F8FAFC;
+  background-image: 
+    linear-gradient(90deg, 
+      rgba(255, 255, 255, 0.98) 0%, 
+      rgba(255, 255, 255, 0.94) 45%, 
+      rgba(255, 255, 255, 0.65) 68%, 
+      rgba(255, 255, 255, 0.15) 100%),
+    url('../assets/images/hero.png');
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-bottom: 1px solid var(--border-light);
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .hero-grid {
@@ -731,20 +744,28 @@ p:last-child {
   margin-bottom: 1.75rem;
 }
 
-.hero-serving-note {
+.hero-trust-bar {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  font-weight: 600;
+  gap: 1.25rem;
+  flex-wrap: wrap;
   margin-bottom: 1.75rem;
 }
 
-.hero-serving-note svg {
-  width: 16px;
-  height: 16px;
+.hero-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.hero-trust-pill svg {
+  width: 15px;
+  height: 15px;
   color: var(--primary-blue);
+  flex-shrink: 0;
 }
 
 /* Immediate Bulk / Project Prompt */
@@ -775,41 +796,27 @@ p:last-child {
 /* Hero Media Showcase */
 .hero-media {
   position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .hero-image-wrapper {
-  position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-  border: 4px solid var(--bg-white);
-  background-color: var(--bg-alt);
-}
-
-.hero-image-wrapper img {
-  width: 100%;
-  height: 480px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.hero-image-wrapper:hover img {
-  transform: scale(1.02);
+  display: none;
 }
 
 .hero-floating-card {
-  position: absolute;
-  bottom: -15px;
-  left: -20px;
-  background-color: var(--bg-white);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
   padding: 1rem 1.25rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  max-width: 270px;
+  max-width: 290px;
   z-index: 3;
 }
 
@@ -837,21 +844,39 @@ p:last-child {
 }
 
 /* ==========================================================================
-   TRUST STRIP
+   TRUST STRIP & TRAIN MARQUEE
    ========================================================================== */
 .trust-strip {
   background-color: var(--primary-blue);
   color: var(--text-white);
-  padding: 1.25rem 0;
+  padding: 1.15rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
+.trust-train-wrapper {
+  width: 100%;
+}
+
+.trust-train-track {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.trust-train-group,
 .trust-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 1.5rem;
   align-items: center;
+  width: 100%;
+}
+
+.trust-train-clone {
+  display: none;
 }
 
 .trust-item {
@@ -882,6 +907,7 @@ p:last-child {
   font-weight: 700;
   color: var(--text-white);
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 /* ==========================================================================
@@ -959,7 +985,7 @@ p:last-child {
 }
 
 .category-card:hover .category-card-media img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .category-card-badge {
