@@ -114,7 +114,7 @@ school-setup/
 ## 4. Key Implementation Rules
 - **No SPA / Client Routing**: Every page is a standalone, physically crawlable HTML file with full SEO text in source.
 - **Strictly No Fake Claims**: No fabricated Google review stars, no fake client logos, no fake statistics. Professional placeholders where needed.
-- **Configurable Contact Data**: Phone number `+91 9580659559` and WhatsApp `919580659559` managed centrally via `js/main.js` and `js/whatsapp.js` with HTML fallbacks.
+- **Configurable Contact & Lead Data**: Phone number `+91 9580659559`, WhatsApp `919580659559`, and Formspree endpoint `https://formspree.io/f/mkjogypy` managed centrally via `js/main.js` and `js/forms.js` with HTML fallbacks.
 - **Mobile First & Responsive**: Sticky mobile bottom action bar (Call, WhatsApp, Get Quote), collapsible hamburger drawer, floating WhatsApp button with tooltip.
 - **Conversion-Oriented CTAs**: Contextual WhatsApp pre-fills (Product, City, General, Project), comprehensive Quote Request form, Quick Quote interactive modal.
 - **Local SEO Superiority**: Unique H1, unique title, unique meta descriptions, localized introduction, local landmarks/areas, local school types, unique FAQs, and BreadcrumbList + LocalBusiness JSON-LD on all 15 city landing pages.
@@ -137,4 +137,8 @@ school-setup/
 - [x] Fix footer logo distortion and oversized rendering across all location and category pages
 - [x] Fix responsive grid behavior (.grid-2, .grid-3, .grid-4, .footer-container) for tablet and mobile
 - [x] Fix footer bottom legal links clearance from floating WhatsApp button on desktop and mobile
+- [x] Full website image optimization (Generated high-performance WebP formats for all assets, compressed originals as fallbacks, reduced total media payload from 22.2 MB to 3.9 MB / ~82% reduction, updated all 27 HTML pages and CSS background rules to WebP, added decoding="async" and explicit dimensions for Core Web Vitals)
+- [x] Formspree lead integration (`https://formspree.io/f/mkjogypy` integrated across all 22 forms via AJAX fetch with async loading states, error fallback handling, subject routing, and semantic HTML action/method fallbacks)
+- [x] Fix thank you popup in mobile view (redesigned into a centered, celebratory card with zero horizontal clipping, responsive full-width WhatsApp button, dynamic title update, and secondary modal dismiss button)
+
 

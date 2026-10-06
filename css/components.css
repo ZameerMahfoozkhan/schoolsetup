@@ -438,6 +438,8 @@ textarea.form-control {
   background-color: #ECFDF5;
   border: 1px solid #A7F3D0;
   margin-bottom: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .form-success-banner.is-active {
@@ -447,8 +449,8 @@ textarea.form-control {
 }
 
 .form-success-icon {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-color: var(--whatsapp-green);
   color: var(--text-white);
@@ -456,6 +458,12 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+}
+
+.form-success-text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .form-success-text h4 {
@@ -467,6 +475,148 @@ textarea.form-control {
 .form-success-text p {
   color: #047857;
   font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  overflow-wrap: break-word;
+}
+
+/* Modal Thank You View - Centered, spacious & fully responsive */
+.modal-body .form-success-banner {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.25rem;
+  background: linear-gradient(180deg, #F0FDF4 0%, #DCFCE7 100%);
+  border: 1.5px solid #86EFAC;
+  border-radius: var(--radius-lg);
+  margin-bottom: 0;
+  box-shadow: 0 4px 16px rgba(22, 163, 74, 0.08);
+}
+
+.modal-body .form-success-banner .form-success-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+.modal-body .form-success-banner .form-success-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.modal-body .form-success-banner .form-success-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-body .form-success-banner .form-success-text h4 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #14532D;
+  margin-bottom: 0.5rem;
+}
+
+.modal-body .form-success-banner .form-success-text p {
+  font-size: 0.925rem;
+  line-height: 1.55;
+  color: #166534;
+  margin: 0 0 1.25rem 0;
+  max-width: 340px;
+  text-align: center;
+}
+
+.modal-body .form-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+.modal-body .form-success-banner .btn {
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+  white-space: normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0;
+}
+
+.modal-body .form-success-banner .btn-whatsapp {
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.28);
+}
+
+.modal-body .form-success-banner .btn-close-modal {
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  background-color: transparent;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.modal-body .form-success-banner .btn-close-modal:hover {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+/* Error alert */
+.form-error-banner {
+  display: none;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  margin-bottom: 1.5rem;
+}
+
+.form-error-banner.is-active {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.form-error-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #DC2626;
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.form-error-text h4 {
+  color: #991B1B;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.form-error-text p {
+  color: #B91C1C;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.btn.is-submitting {
+  opacity: 0.75;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Quote Sidebar Benefits */
@@ -641,10 +791,25 @@ textarea.form-control {
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 116, 139, 0.2) transparent;
   box-shadow: var(--shadow-xl);
   border: 1px solid var(--border-light);
   position: relative;
   animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-dialog::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal-dialog::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-dialog::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.2);
+  border-radius: 4px;
 }
 
 @keyframes modalFadeIn {

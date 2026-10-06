@@ -665,7 +665,7 @@ p:last-child {
       rgba(255, 255, 255, 0.94) 45%, 
       rgba(255, 255, 255, 0.65) 68%, 
       rgba(255, 255, 255, 0.15) 100%),
-    url('../assets/images/hero.png');
+    url('../assets/images/hero.webp');
   background-position: right center;
   background-size: cover;
   background-repeat: no-repeat;

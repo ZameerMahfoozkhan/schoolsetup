@@ -1,0 +1,13 @@
+# Unused media assets (archived & not in website production)
+unused/
+
+# Operating system & Editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+__pycache__/
+*.pyc
+
+# Local scratch logs
+scratch/

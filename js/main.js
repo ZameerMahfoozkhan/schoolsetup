@@ -10,6 +10,7 @@ const BUSINESS_CONFIG = {
   phoneNumber: "+919580659559",
   displayPhone: "+91 9580659559",
   email: "info@schoolsetup.in",
+  formspreeEndpoint: "https://formspree.io/f/mkjogypy",
   serviceAreas: ["Ayodhya", "Sultanpur", "Lucknow"]
 };
 
@@ -66,13 +67,14 @@ function initDynamicContactLinks() {
  * Interactive Quick Quote Modal System
  */
 function initQuickQuoteModal() {
-  const modalOverlay = document.getElementById("quickQuoteModal");
+  const modalOverlay = document.getElementById("quickQuoteModal") || document.getElementById("quoteModal") || document.querySelector(".modal-overlay");
   if (!modalOverlay) return;
 
-  const modalTitle = document.getElementById("modalQuoteTitle");
+  const modalTitle = document.getElementById("modalQuoteTitle") || modalOverlay.querySelector(".modal-title");
   const modalRequirementSelect = document.getElementById("modalRequirement");
-  const modalNotes = document.getElementById("modalNotes");
-  const closeBtns = modalOverlay.querySelectorAll(".js-modal-close");
+  const modalNotes = document.getElementById("modalNotes") || modalOverlay.querySelector('input[name="quantity"]') || modalOverlay.querySelector('#modalQty');
+  const modalProductInput = document.getElementById("modalProductInput") || modalOverlay.querySelector('#modalProductInput');
+  const closeBtns = modalOverlay.querySelectorAll(".js-modal-close, .modal-close-btn, .modal-close");
 
   // Open modal trigger
   document.addEventListener("click", (e) => {
@@ -80,7 +82,7 @@ function initQuickQuoteModal() {
     if (!trigger) return;
 
     e.preventDefault();
-    const productTitle = trigger.getAttribute("data-product-title") || "";
+    const productTitle = trigger.getAttribute("data-product-title") || trigger.getAttribute("data-product") || "";
     const category = trigger.getAttribute("data-category") || "";
 
     if (modalTitle) {
@@ -91,8 +93,16 @@ function initQuickQuoteModal() {
       modalRequirementSelect.value = category;
     }
 
+    if (modalProductInput && productTitle) {
+      modalProductInput.value = productTitle;
+    }
+
     if (modalNotes && productTitle) {
-      modalNotes.value = `I am interested in pricing and details for: ${productTitle}`;
+      if (modalNotes.tagName.toLowerCase() === 'textarea') {
+        modalNotes.value = `I am interested in pricing and details for: ${productTitle}`;
+      } else {
+        modalNotes.value = productTitle;
+      }
     }
 
     modalOverlay.classList.add("is-active");

@@ -207,7 +207,7 @@
         rgba(255, 255, 255, 0.97) 0%, 
         rgba(255, 255, 255, 0.94) 75%, 
         rgba(255, 255, 255, 0.90) 100%),
-      url('../assets/images/hero.png');
+      url('../assets/images/hero.webp');
     background-size: cover;
     background-position: center 20%;
   }
@@ -425,12 +425,67 @@
     padding: 0 1.15rem 1.15rem 1.15rem;
   }
 
+  /* Modal Mobile Optimization */
+  .modal-overlay {
+    padding: 0.75rem !important;
+    align-items: center;
+  }
+
   .modal-dialog {
-    margin: 1rem;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: var(--radius-md);
+  }
+
+  .modal-header {
+    padding: 1rem 1.15rem;
+  }
+
+  .modal-header h3 {
+    font-size: 1.15rem;
   }
 
   .modal-body {
-    padding: 1.25rem;
+    padding: 1.25rem 0.85rem;
+  }
+
+  .modal-body .form-success-banner {
+    padding: 1.5rem 0.85rem;
+    box-sizing: border-box;
+  }
+
+  .modal-body .form-success-banner .form-success-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.65rem;
+  }
+
+  .modal-body .form-success-banner .form-success-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .modal-body .form-success-banner .form-success-text h4 {
+    font-size: 1.2rem;
+  }
+
+  .modal-body .form-success-banner .form-success-text p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .modal-body .form-success-actions {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .modal-body .form-success-banner .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 0.875rem;
+    padding: 0.75rem 0.65rem;
   }
 }
 
