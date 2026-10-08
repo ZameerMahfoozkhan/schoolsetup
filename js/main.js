@@ -9,7 +9,7 @@ const BUSINESS_CONFIG = {
   whatsappNumber: "919580659559",
   phoneNumber: "+919580659559",
   displayPhone: "+91 9580659559",
-  email: "info@schoolsetup.in",
+  email: "info@school-setup.com",
   formspreeEndpoint: "https://formspree.io/f/mkjogypy",
   serviceAreas: ["Ayodhya", "Sultanpur", "Lucknow"]
 };

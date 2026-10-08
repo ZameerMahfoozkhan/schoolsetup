@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://schoolsetup.in/sitemap.xml
+Sitemap: https://www.school-setup.com/sitemap.xml

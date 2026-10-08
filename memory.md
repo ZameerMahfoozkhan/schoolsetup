@@ -140,5 +140,7 @@ school-setup/
 - [x] Full website image optimization (Generated high-performance WebP formats for all assets, compressed originals as fallbacks, reduced total media payload from 22.2 MB to 3.9 MB / ~82% reduction, updated all 27 HTML pages and CSS background rules to WebP, added decoding="async" and explicit dimensions for Core Web Vitals)
 - [x] Formspree lead integration (`https://formspree.io/f/mkjogypy` integrated across all 22 forms via AJAX fetch with async loading states, error fallback handling, subject routing, and semantic HTML action/method fallbacks)
 - [x] Fix thank you popup in mobile view (redesigned into a centered, celebratory card with zero horizontal clipping, responsive full-width WhatsApp button, dynamic title update, and secondary modal dismiss button)
+- [x] Production domain migration to `https://www.school-setup.com/` (updated canonical URLs, og:url, og:image, Schema.org JSON-LD breadcrumbs & LocalBusiness profiles, XML sitemap, robots.txt, visual-sitemap, email address to `info@school-setup.com` in `js/main.js` and all page footers, and added `CNAME` file for custom domain routing).
+
 
 
