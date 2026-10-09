@@ -9,5 +9,6 @@ desktop.ini
 __pycache__/
 *.pyc
 
-# Local scratch logs
+# Local scratch logs & SEO audit reports
 scratch/
+school-setup.com-audit/
