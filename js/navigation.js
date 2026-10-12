@@ -37,6 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.setAttribute("aria-expanded", "true");
     drawer.classList.add("is-active");
     drawer.setAttribute("aria-hidden", "false");
+    const header = document.querySelector(".site-header");
+    if (header) {
+      header.classList.add("is-menu-open");
+      header.classList.remove("is-hidden");
+    }
     document.body.style.overflow = "hidden";
   }
 
@@ -45,6 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.setAttribute("aria-expanded", "false");
     drawer.classList.remove("is-active");
     drawer.setAttribute("aria-hidden", "true");
+    const header = document.querySelector(".site-header");
+    if (header) {
+      header.classList.remove("is-menu-open");
+    }
     document.body.style.overflow = "";
   }
 

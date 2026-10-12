@@ -26,22 +26,91 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Sticky Header on scroll
+ * Smart Auto-Hiding Sticky Header on Scroll
+ * Automatically slides up on scroll-down to maximize viewport on mobile/tablet,
+ * and slides smoothly down on scroll-up for immediate navigation access.
  */
 function initStickyHeader() {
   const header = document.querySelector(".site-header");
   if (!header) return;
 
-  const handleScroll = () => {
-    if (window.scrollY > 20) {
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  const updateHeader = () => {
+    const currentScrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 1080;
+
+    // Shadow & compact header styling on scroll sitewide
+    if (currentScrollY > 20) {
       header.classList.add("is-scrolled");
     } else {
       header.classList.remove("is-scrolled");
     }
+
+    // DESKTOP / PC VIEW: Navbar is ALWAYS fixed and visible, never smart-hidden
+    if (!isMobile) {
+      header.classList.remove("is-hidden");
+      lastScrollY = currentScrollY;
+      ticking = false;
+      return;
+    }
+
+    // MOBILE VIEW: Smart auto-hide on slide-down, instant reveal on slide-up
+    const toggleBtn = document.querySelector(".mobile-toggle");
+    const drawer = document.querySelector(".mobile-nav-drawer");
+    const isMenuOpen = (toggleBtn && toggleBtn.classList.contains("is-open")) ||
+                       (drawer && drawer.classList.contains("is-active")) ||
+                       header.classList.contains("is-menu-open") ||
+                       document.body.classList.contains("menu-open");
+
+    // If mobile menu is open or near page top, header must stay visible
+    if (isMenuOpen || currentScrollY <= 60) {
+      header.classList.remove("is-hidden");
+      lastScrollY = Math.max(0, currentScrollY);
+      ticking = false;
+      return;
+    }
+
+    // Avoid misfiring during iOS rubber-band overscroll at page bottom
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    if (currentScrollY >= maxScroll - 15) {
+      ticking = false;
+      return;
+    }
+
+    const scrollDiff = currentScrollY - lastScrollY;
+
+    // Ultra-responsive threshold: immediately reacts to finger drag
+    if (scrollDiff > 2) {
+      // Sliding down -> hide header
+      header.classList.add("is-hidden");
+      lastScrollY = currentScrollY;
+    } else if (scrollDiff < -2) {
+      // Sliding up -> immediately reveal header
+      header.classList.remove("is-hidden");
+      lastScrollY = currentScrollY;
+    }
+    // If |scrollDiff| <= 2, do not update lastScrollY so subpixel motion accumulates
+
+    ticking = false;
   };
 
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  handleScroll();
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1080) {
+      header.classList.remove("is-hidden");
+    }
+  }, { passive: true });
+
+  // Initial call on mount
+  updateHeader();
 }
 
 /**
