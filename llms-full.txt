@@ -1,0 +1,64 @@
+# School Setup - Complete Institutional Infrastructure & Technical Specifications Manual
+
+> Authoritative reference manual for School Setup (https://www.school-setup.com/), direct institutional manufacturer and turnkey infrastructure provider in India.
+
+---
+
+## 1. Corporate & Operational Overview
+- **Brand Name:** School Setup
+- **Tagline:** Complete School & Outdoor Solutions
+- **Primary Business:** Direct B2B institutional manufacturing, procurement, batch transport, and on-site assembly of educational campus furniture, commercial play stations, and outdoor gym installations.
+- **Operating Headquarters / Dispatch Corridor:** Ayodhya – Lucknow Highway Corridor, Uttar Pradesh 226001, India.
+- **Primary Contact Phone:** +91 9580659559
+- **Official Inquiries Email:** info@school-setup.com
+- **Core Regional Operational Footprint:** Lucknow, Ayodhya, Sultanpur, and statewide across Uttar Pradesh, with capacity for pan-India institutional consignments.
+
+---
+
+## 2. Product Specifications & Engineering Benchmarks
+
+### 2.1 Classroom School Furniture (BIS IS 4837 Compliant)
+- **Primary Materials:** Prime 14 to 16-gauge CRCA (Cold Rolled Close Annealed) square and rectangular steel tubes.
+- **Joint Construction:** Robotic CO2 MIG welding with clean continuous beads, load-tested to exceed 200 kg student dynamic loads without frame deformation.
+- **Surface Treatment:** Multi-stage chemical degreasing, phosphating, and 60–80 micron thermoset pure polyester powder coating cured at 200°C for lifetime corrosion resistance.
+- **Board Surfaces:** 18mm to 25mm pre-laminated high-density moisture-resistant MDF or particle boards sealed with 2mm PVC machine-applied hot-melt edge banding.
+- **Product Range:** Dual desks with integrated benches, single study chairs with write-pads, teacher executive tables, library modular steel book racks, science lab workbenches, and administrative lockers.
+
+### 2.2 Preschool & Early Childhood Furniture
+- **Primary Materials:** 100% virgin, food-grade polypropylene and non-toxic high-density polyethylene (HDPE).
+- **Safety Benchmarks:** Soft radius edges on all components, concealed fasteners, zero exposed sharp angles, non-marking anti-skid rubber floor glides.
+- **Product Range:** Circular, flower, and kidney activity tables (height-adjustable legs from 18 to 22 inches), stackable ergonomic toddler chairs (up to 10 high), modular cubby storage units for bags and footwear, display book racks, and indoor play tunnels.
+
+### 2.3 Commercial Playground Equipment
+- **Primary Materials:** Heavy-gauge galvanized steel structural uprights with food-grade LLDPE (Linear Low-Density Polyethylene) rotational molded slides, tubes, and roof canopies.
+- **Safety Standards:** Impact-cushioning fall safety zones, UV-stabilized pigments resistant to harsh Indian weather.
+- **Product Range:** Multi-play stations (MPS), spiral tube slides, double wave slides, heavy-duty 2-seater and 4-seater A-frame swings, heavy-duty seesaws, spring riders, merry-go-rounds, and safety rubber tile / EPDM flooring.
+
+### 2.4 Outdoor Open Gym Fitness Stations
+- **Structural Pipe Specifications:** 114mm Outside Diameter (OD) Class-B Galvanized Iron (GI) central pillars with minimum 3mm wall thickness.
+- **Bearing Mechanisms:** Heavy-duty sealed 6204 and 6305 deep groove anti-friction bearings permanently lubricated with lithium grease and protected by weatherproof nylon dust caps.
+- **Civil Foundation Requirements:** M20 grade concrete footing with minimum 450mm (1.5 ft) depth, steel rebar cage, and heavy anchor bolts.
+- **Product Range:** Air Walkers (single & dual), Chest Press & Lat Pull Combos, Leg Press (seated), Cross Trainer Ellipticals, Arm Wheel Tai Chi Spinners, Shoulder Wheels, and Waist Twisters.
+
+---
+
+## 3. Institutional Knowledge Guides
+
+1. **How to Start a Play School in India (2026 Guide):**
+   - URL: https://www.school-setup.com/blog/how-to-start-a-play-school-in-india/
+   - Scope: Budget allocation (₹8–18L), room allocation, childproofing norms, independent vs franchise ROI.
+2. **Outdoor Open Gym Setup Guide:**
+   - URL: https://www.school-setup.com/blog/outdoor-open-gym-equipment-setup-guide/
+   - Scope: Pipe engineering, bearing mechanics, concrete depth calculations, safety zone layouts.
+3. **School Furniture Buying Guide:**
+   - URL: https://www.school-setup.com/blog/school-furniture-buying-guide/
+   - Scope: BIS IS 4837 Class 1–6 anthropometric sizing matrix, 16-gauge steel specs, tender purchase checklist.
+
+---
+
+## 4. Institutional Ordering & Lead Process
+
+- **Step 1: Consultation:** Review classroom dimensions, campus layout, or municipal park blueprints.
+- **Step 2: Quotation & BOQ:** Itemized proposal generated with direct factory pricing and transport schedule.
+- **Step 3: Direct Batch Dispatch:** Dispatched via dedicated trucks directly to the campus gate.
+- **Step 4: On-Site Assembly:** Regional setup teams position, bolt, level, and anchor all furniture and equipment.
