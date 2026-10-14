@@ -44,13 +44,16 @@
 
 ## 3. Institutional Knowledge Guides
 
-1. **How to Start a Play School in India (2026 Guide):**
+1. **Play School Business in India (2026 Market Report):**
+   - URL: https://www.school-setup.com/blog/playschool-business-in-india-2026-market-report/
+   - Scope: Comprehensive industry report: unit economics, 25–45% net profit margins, 3-year P&L projection models (60 vs 100 students), franchise vs independent ROI (saving ₹25L–₹38L in royalties), dual-revenue daycare model, and NEP 2020 ECCE compliance norms.
+2. **How to Start a Play School in India (2026 Guide):**
    - URL: https://www.school-setup.com/blog/how-to-start-a-play-school-in-india/
    - Scope: Budget allocation (₹8–18L), room allocation, childproofing norms, independent vs franchise ROI.
-2. **Outdoor Open Gym Setup Guide:**
+3. **Outdoor Open Gym Setup Guide:**
    - URL: https://www.school-setup.com/blog/outdoor-open-gym-equipment-setup-guide/
    - Scope: Pipe engineering, bearing mechanics, concrete depth calculations, safety zone layouts.
-3. **School Furniture Buying Guide:**
+4. **School Furniture Buying Guide:**
    - URL: https://www.school-setup.com/blog/school-furniture-buying-guide/
    - Scope: BIS IS 4837 Class 1–6 anthropometric sizing matrix, 16-gauge steel specs, tender purchase checklist.
 
