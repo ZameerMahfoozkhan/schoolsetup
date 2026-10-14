@@ -1330,7 +1330,7 @@ textarea.form-control {
 
 .article-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
+  grid-template-columns: 320px minmax(0, 1fr);
   gap: 3.5rem;
   align-items: start;
   min-width: 0;
@@ -1340,6 +1340,8 @@ textarea.form-control {
 
 /* Article Prose Typography */
 .article-body {
+  grid-column: 2;
+  grid-row: 1;
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--text-body);
@@ -1588,8 +1590,14 @@ textarea.form-control {
 
 /* Article Sidebar Components */
 .article-sidebar {
+  grid-column: 1;
+  grid-row: 1;
   position: sticky;
   top: 90px;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
@@ -1597,7 +1605,21 @@ textarea.form-control {
   max-width: 100%;
 }
 
-.toc-card {
+.article-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.article-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.article-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 4px;
+}
+
+.toc-card,
+.sidebar-widget {
   background-color: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
@@ -1607,7 +1629,8 @@ textarea.form-control {
   overflow: hidden;
 }
 
-.toc-title {
+.toc-title,
+.sidebar-widget-title {
   font-size: 1rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -1621,7 +1644,8 @@ textarea.form-control {
   gap: 0.5rem;
 }
 
-.toc-nav-list {
+.toc-nav-list,
+.toc-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1630,24 +1654,31 @@ textarea.form-control {
   gap: 0.65rem;
 }
 
-.toc-nav-link {
+.toc-nav-link,
+.toc-link {
   font-size: 0.875rem;
   line-height: 1.45;
   color: var(--text-muted);
   text-decoration: none;
   display: block;
-  padding: 0.25rem 0.5rem;
+  padding: 0.35rem 0.6rem;
   border-radius: var(--radius-sm);
   transition: all 0.2s ease;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
 
-.toc-nav-link:hover {
+.toc-nav-link:hover,
+.toc-link:hover {
   color: var(--primary-blue);
   background-color: var(--primary-blue-light);
   font-weight: 600;
   transform: translateX(3px);
+}
+
+.quote-widget {
+  background: linear-gradient(135deg, #F8FAFC 0%, #EEF4FB 100%);
+  border: 1px solid #BFDBFE;
 }
 
 .sidebar-consult-card {
@@ -1671,6 +1702,62 @@ textarea.form-control {
   color: #E2E8F0;
   line-height: 1.55;
   margin-bottom: 1.25rem;
+}
+
+/* Related Institutional Guides Widget in Sidebar */
+.related-articles-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.related-article-item {
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.75rem;
+}
+
+.related-article-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.related-article-link {
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.related-article-link:hover {
+  transform: translateX(3px);
+}
+
+.related-article-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-blue);
+  background: var(--primary-blue-light);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.35rem;
+}
+
+.related-article-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-dark);
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.related-article-link:hover .related-article-title {
+  color: var(--primary-blue);
 }
 
 /* In-Article CTA Banner */
@@ -1781,8 +1868,19 @@ textarea.form-control {
     width: 100%;
   }
 
+  .article-body {
+    grid-column: 1;
+    grid-row: 1;
+    order: 1;
+  }
+
   .article-sidebar {
+    grid-column: 1;
+    grid-row: 2;
+    order: 2;
     position: static;
+    max-height: none;
+    overflow-y: visible;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
