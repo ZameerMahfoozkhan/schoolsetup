@@ -1594,50 +1594,35 @@ textarea.form-control {
   grid-row: 1;
   position: sticky;
   top: 90px;
-  max-height: calc(100vh - 110px);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 1.5rem;
   min-width: 0;
   max-width: 100%;
 }
 
-.article-sidebar::-webkit-scrollbar {
-  width: 5px;
-}
-
-.article-sidebar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.article-sidebar::-webkit-scrollbar-thumb {
-  background: var(--border-light);
-  border-radius: 4px;
-}
-
 .toc-card,
-.sidebar-widget {
+.sidebar-widget,
+.sidebar-consult-card {
+  height: auto;
+  min-height: auto;
   background-color: #ffffff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: 1.25rem;
   box-shadow: var(--shadow-sm);
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .toc-title,
 .sidebar-widget-title {
-  font-size: 1rem;
+  font-size: 0.925rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-dark);
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--primary-blue-light);
   display: flex;
   align-items: center;
@@ -1651,17 +1636,17 @@ textarea.form-control {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.4rem;
 }
 
 .toc-nav-link,
 .toc-link {
-  font-size: 0.875rem;
-  line-height: 1.45;
+  font-size: 0.84rem;
+  line-height: 1.35;
   color: var(--text-muted);
   text-decoration: none;
   display: block;
-  padding: 0.35rem 0.6rem;
+  padding: 0.25rem 0.45rem;
   border-radius: var(--radius-sm);
   transition: all 0.2s ease;
   overflow-wrap: break-word;
@@ -1685,23 +1670,23 @@ textarea.form-control {
   background: linear-gradient(135deg, #0A4C95 0%, #073567 100%);
   color: #ffffff;
   border-radius: var(--radius-md);
-  padding: 1.75rem;
+  padding: 1.35rem 1.25rem;
   box-shadow: var(--shadow-md);
   box-sizing: border-box;
 }
 
 .sidebar-consult-card h4 {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 800;
   color: #ffffff;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .sidebar-consult-card p {
-  font-size: 0.875rem;
+  font-size: 0.84rem;
   color: #E2E8F0;
-  line-height: 1.55;
-  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 /* Related Institutional Guides Widget in Sidebar */
@@ -1711,12 +1696,12 @@ textarea.form-control {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.65rem;
 }
 
 .related-article-item {
   border-bottom: 1px solid var(--border-light);
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.6rem;
 }
 
 .related-article-item:last-child {
@@ -1736,21 +1721,21 @@ textarea.form-control {
 
 .related-article-badge {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--primary-blue);
   background: var(--primary-blue-light);
-  padding: 0.15rem 0.5rem;
+  padding: 0.12rem 0.45rem;
   border-radius: var(--radius-full);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.25rem;
 }
 
 .related-article-title {
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.35;
   color: var(--text-dark);
   margin: 0;
   transition: color 0.2s ease;
