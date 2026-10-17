@@ -337,6 +337,15 @@
     grid-column: span 1;
   }
 
+  .setup-card.setup-featured.has-media {
+    grid-template-columns: 1fr;
+  }
+
+  .setup-card.setup-featured.has-media .setup-featured-media {
+    height: 200px;
+    min-height: 200px;
+  }
+
   .products-grid,
   .products-grid-4,
   .projects-grid,

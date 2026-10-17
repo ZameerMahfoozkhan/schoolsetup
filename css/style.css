@@ -1096,44 +1096,122 @@ p:last-child {
   background-color: var(--bg-white);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-light);
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
   box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.setup-card.has-media {
+  padding: 0;
+}
+
+.setup-card:not(.has-media) {
+  padding: 2rem;
 }
 
 .setup-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
   border-color: var(--primary-blue);
 }
 
+.setup-card-media {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.setup-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.setup-card:hover .setup-card-media img {
+  transform: scale(1.06);
+}
+
+.setup-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  z-index: 2;
+}
+
+.setup-card-badge.badge-blue {
+  background: rgba(10, 76, 149, 0.92);
+  color: #ffffff;
+}
+
+.setup-card-badge.badge-orange {
+  background: rgba(242, 92, 5, 0.92);
+  color: #ffffff;
+}
+
+.setup-card-badge.badge-green {
+  background: rgba(21, 128, 61, 0.92);
+  color: #ffffff;
+}
+
+.setup-card-content {
+  padding: 1.5rem 1.75rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.setup-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.5rem;
+}
+
 .setup-card-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
   background-color: var(--primary-blue-light);
   color: var(--primary-blue);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+  margin-bottom: 0;
 }
 
 .setup-card-icon svg {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
 }
 
 .setup-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  font-weight: 800;
+  color: var(--text-dark);
 }
 
 .setup-card p {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.925rem;
+  line-height: 1.55;
+  margin-top: 0.5rem;
   margin-bottom: 1.25rem;
   flex-grow: 1;
 }
@@ -1169,6 +1247,37 @@ p:last-child {
   color: var(--text-white);
   border-color: transparent;
   grid-column: span 2;
+  position: relative;
+}
+
+.setup-card.setup-featured.has-media {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  padding: 0;
+}
+
+.setup-featured-media {
+  position: relative;
+  height: 100%;
+  min-height: 260px;
+  overflow: hidden;
+}
+
+.setup-featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.setup-card.setup-featured:hover .setup-featured-media img {
+  transform: scale(1.06);
+}
+
+.setup-featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10, 76, 149, 0.1), rgba(7, 53, 103, 0.8));
 }
 
 .setup-card.setup-featured h3,
@@ -1184,6 +1293,14 @@ p:last-child {
 
 .setup-card.setup-featured .setup-card-highlights {
   border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.setup-card.setup-featured .setup-highlight-item svg {
+  color: #4ade80;
+}
+
+.setup-card.setup-featured .setup-card-content {
+  padding: 2rem 2.25rem;
 }
 
 /* ==========================================================================
@@ -1519,6 +1636,36 @@ img.footer-logo,
 .footer-link:hover {
   color: var(--text-white);
   transform: translateX(3px);
+}
+
+.footer-cert-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.footer-sublabel {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-orange);
+  margin-top: 0.35rem;
+  margin-bottom: 0.2rem;
 }
 
 .footer-bottom {

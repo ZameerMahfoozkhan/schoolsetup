@@ -1,39 +1,55 @@
 /**
  * School Setup - FAQ Accordion Controller
- * Manages accessible accordion opening, closing, and ARIA attributes
+ * Manages accessible accordion opening, closing, keyboard interactions, and ARIA attributes
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-  initFAQAccordions();
-});
+(function() {
+  if (window.__faqAccordionsInitialized) return;
+  window.__faqAccordionsInitialized = true;
 
-function initFAQAccordions() {
-  const faqItems = document.querySelectorAll(".faq-item");
+  function toggleFAQ(item, header) {
+    if (!item) return;
+    const isOpen = item.classList.contains("is-open");
+    const btn = header || item.querySelector(".faq-header, .faq-question, button");
 
-  faqItems.forEach(item => {
-    const header = item.querySelector(".faq-header, .faq-question");
-    const body = item.querySelector(".faq-body, .faq-answer");
+    if (isOpen) {
+      item.classList.remove("is-open");
+      if (btn) btn.setAttribute("aria-expanded", "false");
+    } else {
+      item.classList.add("is-open");
+      if (btn) btn.setAttribute("aria-expanded", "true");
+    }
+  }
 
-    if (!header || !body) return;
-
-    header.addEventListener("click", () => {
-      const isOpen = item.classList.contains("is-open");
-
-      // Optional: Close other open FAQs if needed (uncomment for single-open behavior)
-      // faqItems.forEach(other => {
-      //   if (other !== item) {
-      //     other.classList.remove("is-open");
-      //     other.querySelector(".faq-header")?.setAttribute("aria-expanded", "false");
-      //   }
-      // });
-
-      if (isOpen) {
-        item.classList.remove("is-open");
-        header.setAttribute("aria-expanded", "false");
-      } else {
-        item.classList.add("is-open");
-        header.setAttribute("aria-expanded", "true");
+  // Delegated click handler on document
+  document.addEventListener("click", function(e) {
+    const header = e.target.closest(".faq-header, .faq-question");
+    if (header) {
+      const item = header.closest(".faq-item");
+      if (item) {
+        e.preventDefault();
+        toggleFAQ(item, header);
       }
-    });
+    }
   });
-}
+
+  // Keyboard accessibility: Enter or Space on non-button headers
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Enter" || e.key === " ") {
+      const header = e.target.closest(".faq-header, .faq-question");
+      if (header && header.tagName.toLowerCase() !== "button") {
+        const item = header.closest(".faq-item");
+        if (item) {
+          e.preventDefault();
+          toggleFAQ(item, header);
+        }
+      }
+    }
+  });
+
+  // Expose global initializer for explicit calls
+  window.initFAQAccordions = function() {
+    // Handled seamlessly via event delegation
+  };
+})();
+

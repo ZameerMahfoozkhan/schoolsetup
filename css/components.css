@@ -1055,12 +1055,53 @@ textarea.form-control {
   padding: 1.75rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.related-links-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  border-color: rgba(10, 76, 149, 0.3);
 }
 
 .related-links-card h4 {
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: var(--text-dark);
+}
+
+.related-links-card .city-badge {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  width: fit-content;
+}
+
+.related-links-card a.city-explore-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-light);
+  transition: color 0.15s ease, gap 0.15s ease;
+}
+
+.related-links-card a.city-explore-link:hover {
+  color: var(--accent-orange);
+  gap: 0.65rem;
 }
 
 .related-links-list {
@@ -1784,6 +1825,22 @@ textarea.form-control {
   width: 100%;
 }
 
+.article-cta-buttons .btn,
+.article-body .btn {
+  text-decoration: none;
+}
+
+.article-cta-buttons .btn-primary,
+.article-body .btn-primary {
+  color: #ffffff;
+}
+
+.article-cta-buttons .btn-primary:hover,
+.article-body .btn-primary:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 /* Author Bio Card (E-E-A-T) */
 .author-bio-card {
   display: flex;
@@ -1958,5 +2015,224 @@ textarea.form-control {
   .blog-hero-lead {
     font-size: 1rem;
   }
+}
+
+/* ==========================================================================
+   CAMPUS SCOPE & MODULE CARDS (ENHANCED INTERACTIVE CARDS)
+   ========================================================================== */
+.scope-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 1024px) {
+  .scope-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .scope-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.scope-card {
+  background-color: var(--bg-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  position: relative;
+}
+
+.scope-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.12), 0 6px 14px -2px rgba(15, 23, 42, 0.06);
+  border-color: rgba(10, 76, 149, 0.3);
+}
+
+.scope-card-media {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  background-color: #F1F5F9;
+}
+
+.scope-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.scope-card:hover .scope-card-media img {
+  transform: scale(1.06);
+}
+
+.scope-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.12) 0%, rgba(15, 23, 42, 0.45) 100%);
+  pointer-events: none;
+}
+
+.scope-card-number {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  font-size: 0.825rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 2;
+  color: var(--text-dark);
+}
+
+.number-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.scope-card-badge {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  z-index: 2;
+}
+
+.scope-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.scope-card-title {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+  transition: color 0.2s ease;
+}
+
+.scope-card:hover .scope-card-title {
+  color: var(--primary-blue);
+}
+
+.scope-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.scope-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.scope-tag {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: var(--text-body);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.scope-card:hover .scope-tag {
+  background: #FFFFFF;
+  border-color: #CBD5E1;
+}
+
+.scope-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  margin-top: auto;
+}
+
+.scope-explore-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.scope-explore-link svg {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.scope-card:hover .scope-explore-link {
+  color: var(--accent-orange);
+}
+
+.scope-card:hover .scope-explore-link svg {
+  transform: translateX(4px);
+}
+
+.scope-quote-btn {
+  font-size: 0.775rem;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: var(--primary-blue-light);
+  color: var(--primary-blue);
+  border: 1px solid rgba(10, 76, 149, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.scope-quote-btn:hover {
+  background: var(--primary-blue);
+  color: #FFFFFF;
+  border-color: var(--primary-blue);
 }
 

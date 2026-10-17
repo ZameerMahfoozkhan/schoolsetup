@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visual Sitemap | School Setup</title>
+<meta name="description" content="Explore the comprehensive visual architecture and sitemap of School Setup. Browse classroom furniture, playground equipment, open gyms, and regional city hubs across UP and Bihar.">
+<link rel="canonical" href="https://school-setup.com/visual-sitemap.html">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
@@ -323,7 +325,10 @@
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
-    cursor: default;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: inherit;
   }
   .page-card::before {
     content: '';
@@ -337,6 +342,9 @@
     border-color: var(--border-medium);
     box-shadow: var(--shadow-md);
     transform: translateY(-2px);
+  }
+  .page-card:hover .card-title {
+    color: var(--primary-blue);
   }
   .page-card .card-icon {
     font-size: 20px;
@@ -414,6 +422,24 @@
     color: var(--text-muted);
   }
 
+  .state-group-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 32px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .state-group-title span.badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    background: var(--primary-blue-light);
+    color: var(--primary-blue);
+  }
+
   .city-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -469,6 +495,8 @@
     gap: 12px;
     padding: 10px 22px;
     transition: background var(--transition-base);
+    text-decoration: none;
+    color: inherit;
   }
   .city-link:hover {
     background: var(--bg-surface);
@@ -487,6 +515,9 @@
     font-size: 13px;
     font-weight: 600;
     color: var(--text-dark);
+  }
+  .city-link:hover .link-title {
+    color: var(--primary-blue);
   }
   .city-link-text .link-url {
     font-size: 11px;
@@ -515,6 +546,15 @@
 
   .city-noida .city-dot { background: var(--outdoor-green); box-shadow: 0 0 8px rgba(21,128,61,0.3); }
   .city-noida .city-link-icon { background: var(--outdoor-green-light); color: var(--outdoor-green); }
+
+  .city-patna .city-dot { background: var(--accent-orange); box-shadow: 0 0 8px rgba(242,92,5,0.3); }
+  .city-patna .city-link-icon { background: var(--accent-orange-light); color: var(--accent-orange); }
+
+  .city-muzaffarpur .city-dot { background: var(--primary-blue); box-shadow: 0 0 8px rgba(10,76,149,0.3); }
+  .city-muzaffarpur .city-link-icon { background: var(--primary-blue-light); color: var(--primary-blue); }
+
+  .city-gaya .city-dot { background: var(--outdoor-green); box-shadow: 0 0 8px rgba(21,128,61,0.3); }
+  .city-gaya .city-link-icon { background: var(--outdoor-green-light); color: var(--outdoor-green); }
 
   /* ——— Legend ——— */
   .legend {
@@ -583,7 +623,7 @@
 <div class="topbar">
   <div class="container">
     <span class="dot"></span>
-    Site Architecture &nbsp;·&nbsp; 48 Pages &nbsp;·&nbsp; www.school-setup.com
+    Site Architecture &nbsp;·&nbsp; 66 Pages &nbsp;·&nbsp; www.school-setup.com
   </div>
 </div>
 
@@ -606,7 +646,7 @@
   <div class="container">
     <div class="label">📐 Site Architecture</div>
     <h1>Visual <span>Sitemap</span></h1>
-    <p>Complete page hierarchy and URL structure for www.school-setup.com — all 49 pages organized by category</p>
+    <p>Complete page hierarchy and URL structure for www.school-setup.com — all 66 pages organized by category and regional hubs</p>
   </div>
 </section>
 
@@ -614,23 +654,23 @@
 <div class="stats-strip">
   <div class="container">
     <div class="stat-item">
-      <div class="stat-value">49</div>
+      <div class="stat-value">66</div>
       <div class="stat-label">Total Pages</div>
     </div>
     <div class="stat-item">
       <div class="stat-value">8</div>
-      <div class="stat-label">Core Pages</div>
+      <div class="stat-label">Core &amp; Legal</div>
     </div>
     <div class="stat-item">
       <div class="stat-value">6</div>
       <div class="stat-label">Product Hubs</div>
     </div>
     <div class="stat-item">
-      <div class="stat-value">30</div>
+      <div class="stat-value">45</div>
       <div class="stat-label">City Pages</div>
     </div>
     <div class="stat-item">
-      <div class="stat-value">5</div>
+      <div class="stat-value">6</div>
       <div class="stat-label">Blog &amp; Guides</div>
     </div>
   </div>
@@ -641,22 +681,22 @@
 
   <!-- Root Node -->
   <div class="root-node">
-    <div class="root-card">
+    <a href="/" class="root-card" style="text-decoration: none; color: inherit; display: block;">
       <div class="url">www.school-setup.com</div>
       <h2>🏠 Homepage</h2>
       <span class="priority-tag">Priority 1.0 · Weekly</span>
-    </div>
+    </a>
   </div>
 
   <!-- Core Pages -->
   <div class="sitemap-section theme-blue">
     <div class="section-header">
       <div class="section-icon">📄</div>
-      <h3>Core Pages</h3>
-      <span class="count-badge">6 pages</span>
+      <h3>Core &amp; Company Pages</h3>
+      <span class="count-badge">8 pages</span>
     </div>
     <div class="cards-grid">
-      <div class="page-card">
+      <a href="/about/" class="page-card">
         <div class="card-icon">ℹ️</div>
         <div class="card-title">About Us</div>
         <div class="card-url">/about/</div>
@@ -664,8 +704,8 @@
           <span class="priority-pill p-med">0.8</span>
           <span class="freq-pill">Monthly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/contact/" class="page-card">
         <div class="card-icon">📞</div>
         <div class="card-title">Contact</div>
         <div class="card-url">/contact/</div>
@@ -673,8 +713,8 @@
           <span class="priority-pill p-med">0.8</span>
           <span class="freq-pill">Monthly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/request-a-quote/" class="page-card">
         <div class="card-icon">📝</div>
         <div class="card-title">Request a Quote</div>
         <div class="card-url">/request-a-quote/</div>
@@ -682,8 +722,8 @@
           <span class="priority-pill p-high">0.9</span>
           <span class="freq-pill">Weekly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/projects/" class="page-card">
         <div class="card-icon">📸</div>
         <div class="card-title">Our Projects</div>
         <div class="card-url">/projects/</div>
@@ -691,17 +731,17 @@
           <span class="priority-pill p-med">0.8</span>
           <span class="freq-pill">Monthly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/locations/" class="page-card">
         <div class="card-icon">📍</div>
-        <div class="card-title">Locations</div>
+        <div class="card-title">Locations Hub</div>
         <div class="card-url">/locations/</div>
         <div class="card-meta">
           <span class="priority-pill p-med">0.8</span>
           <span class="freq-pill">Monthly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/complete-school-setup/" class="page-card">
         <div class="card-icon">🏫</div>
         <div class="card-title">Complete School Setup</div>
         <div class="card-url">/complete-school-setup/</div>
@@ -709,7 +749,25 @@
           <span class="priority-pill p-high">0.9</span>
           <span class="freq-pill">Weekly</span>
         </div>
-      </div>
+      </a>
+      <a href="/privacy-policy/" class="page-card">
+        <div class="card-icon">🔒</div>
+        <div class="card-title">Privacy Policy</div>
+        <div class="card-url">/privacy-policy/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-med">0.5</span>
+          <span class="freq-pill">Yearly</span>
+        </div>
+      </a>
+      <a href="/terms-and-conditions/" class="page-card">
+        <div class="card-icon">📜</div>
+        <div class="card-title">Terms &amp; Conditions</div>
+        <div class="card-url">/terms-and-conditions/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-med">0.5</span>
+          <span class="freq-pill">Yearly</span>
+        </div>
+      </a>
     </div>
   </div>
 
@@ -718,10 +776,10 @@
     <div class="section-header">
       <div class="section-icon">🏷️</div>
       <h3>Product &amp; Solution Hubs</h3>
-      <span class="count-badge">5 hubs</span>
+      <span class="count-badge">6 hubs</span>
     </div>
     <div class="cards-grid">
-      <div class="page-card">
+      <a href="/school-furniture/" class="page-card">
         <div class="card-icon">🪑</div>
         <div class="card-title">School Furniture</div>
         <div class="card-url">/school-furniture/</div>
@@ -729,8 +787,8 @@
           <span class="priority-pill p-high">0.9</span>
           <span class="freq-pill">Weekly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/playground-equipment/" class="page-card">
         <div class="card-icon">🎠</div>
         <div class="card-title">Playground Equipment</div>
         <div class="card-url">/playground-equipment/</div>
@@ -738,8 +796,8 @@
           <span class="priority-pill p-high">0.9</span>
           <span class="freq-pill">Weekly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/outdoor-gym-equipment/" class="page-card">
         <div class="card-icon">🏋️</div>
         <div class="card-title">Outdoor Gym Equipment</div>
         <div class="card-url">/outdoor-gym-equipment/</div>
@@ -747,8 +805,8 @@
           <span class="priority-pill p-high">0.9</span>
           <span class="freq-pill">Weekly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/kids-furniture/" class="page-card">
         <div class="card-icon">🧒</div>
         <div class="card-title">Kids Furniture</div>
         <div class="card-url">/kids-furniture/</div>
@@ -756,8 +814,8 @@
           <span class="priority-pill p-high">0.9</span>
           <span class="freq-pill">Weekly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/school-infrastructure/" class="page-card">
         <div class="card-icon">🏗️</div>
         <div class="card-title">School Infrastructure</div>
         <div class="card-url">/school-infrastructure/</div>
@@ -765,7 +823,16 @@
           <span class="priority-pill p-high">0.9</span>
           <span class="freq-pill">Weekly</span>
         </div>
-      </div>
+      </a>
+      <a href="/complete-school-setup/" class="page-card">
+        <div class="card-icon">🏢</div>
+        <div class="card-title">Turnkey Campus Setup</div>
+        <div class="card-url">/complete-school-setup/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-high">0.9</span>
+          <span class="freq-pill">Weekly</span>
+        </div>
+      </a>
     </div>
   </div>
 
@@ -774,10 +841,10 @@
     <div class="section-header">
       <div class="section-icon">📚</div>
       <h3>Educational &amp; Procurement Guides</h3>
-      <span class="count-badge">5 guides</span>
+      <span class="count-badge">6 guides</span>
     </div>
     <div class="cards-grid">
-      <div class="page-card">
+      <a href="/blog/" class="page-card">
         <div class="card-icon">📖</div>
         <div class="card-title">Guides &amp; Blog Hub</div>
         <div class="card-url">/blog/</div>
@@ -785,8 +852,8 @@
           <span class="priority-pill p-high">0.9</span>
           <span class="freq-pill">Weekly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/blog/playschool-business-in-india-2026-market-report/" class="page-card">
         <div class="card-icon">📊</div>
         <div class="card-title">Playschool Business 2026 Report</div>
         <div class="card-url">/blog/playschool-business-in-india-2026-market-report/</div>
@@ -794,8 +861,8 @@
           <span class="priority-pill p-high">0.85</span>
           <span class="freq-pill">Weekly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/blog/how-to-start-a-play-school-in-india/" class="page-card">
         <div class="card-icon">🧒</div>
         <div class="card-title">How to Start a Play School</div>
         <div class="card-url">/blog/how-to-start-a-play-school-in-india/</div>
@@ -803,8 +870,8 @@
           <span class="priority-pill p-med">0.85</span>
           <span class="freq-pill">Monthly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/blog/outdoor-open-gym-equipment-setup-guide/" class="page-card">
         <div class="card-icon">🏋️</div>
         <div class="card-title">Outdoor Open Gym Guide</div>
         <div class="card-url">/blog/outdoor-open-gym-equipment-setup-guide/</div>
@@ -812,8 +879,8 @@
           <span class="priority-pill p-med">0.85</span>
           <span class="freq-pill">Monthly</span>
         </div>
-      </div>
-      <div class="page-card">
+      </a>
+      <a href="/blog/school-furniture-buying-guide/" class="page-card">
         <div class="card-icon">🪑</div>
         <div class="card-title">School Furniture Buying Guide</div>
         <div class="card-url">/blog/school-furniture-buying-guide/</div>
@@ -821,7 +888,16 @@
           <span class="priority-pill p-med">0.85</span>
           <span class="freq-pill">Monthly</span>
         </div>
-      </div>
+      </a>
+      <a href="/blog/preschool-furniture-buying-checklist/" class="page-card">
+        <div class="card-icon">📋</div>
+        <div class="card-title">Preschool Furniture Buying Checklist</div>
+        <div class="card-url">/blog/preschool-furniture-buying-checklist/</div>
+        <div class="card-meta">
+          <span class="priority-pill p-high">0.85</span>
+          <span class="freq-pill">Weekly</span>
+        </div>
+      </a>
     </div>
   </div>
 
@@ -829,7 +905,13 @@
   <div class="regional-hub">
     <div class="regional-header">
       <h2>📍 Regional <span>City Pages</span></h2>
-      <p>Location-specific landing pages for local SEO — 5 pages per city</p>
+      <p>Location-specific landing pages for local SEO — 9 regional hubs across Uttar Pradesh &amp; Bihar (5 pages per city)</p>
+    </div>
+
+    <!-- Uttar Pradesh Regional Hubs -->
+    <div class="state-group-title">
+      <span>🏛️ Uttar Pradesh Core Hubs</span>
+      <span class="badge">6 Cities · 30 Pages</span>
     </div>
 
     <div class="city-columns">
@@ -842,41 +924,41 @@
           <span class="city-count">5 pages</span>
         </div>
         <div class="city-links">
-          <div class="city-link">
+          <a href="/school-furniture-ayodhya/" class="city-link">
             <div class="city-link-icon">🪑</div>
             <div class="city-link-text">
               <div class="link-title">School Furniture</div>
               <div class="link-url">/school-furniture-ayodhya/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/playground-equipment-ayodhya/" class="city-link">
             <div class="city-link-icon">🎠</div>
             <div class="city-link-text">
               <div class="link-title">Playground Equipment</div>
               <div class="link-url">/playground-equipment-ayodhya/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/outdoor-gym-ayodhya/" class="city-link">
             <div class="city-link-icon">🏋️</div>
             <div class="city-link-text">
               <div class="link-title">Outdoor Gym</div>
               <div class="link-url">/outdoor-gym-ayodhya/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/kids-furniture-ayodhya/" class="city-link">
             <div class="city-link-icon">🧒</div>
             <div class="city-link-text">
               <div class="link-title">Kids Furniture</div>
               <div class="link-url">/kids-furniture-ayodhya/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/school-setup-ayodhya/" class="city-link">
             <div class="city-link-icon">🏫</div>
             <div class="city-link-text">
               <div class="link-title">School Setup</div>
               <div class="link-url">/school-setup-ayodhya/</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -888,41 +970,41 @@
           <span class="city-count">5 pages</span>
         </div>
         <div class="city-links">
-          <div class="city-link">
+          <a href="/school-furniture-sultanpur/" class="city-link">
             <div class="city-link-icon">🪑</div>
             <div class="city-link-text">
               <div class="link-title">School Furniture</div>
               <div class="link-url">/school-furniture-sultanpur/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/playground-equipment-sultanpur/" class="city-link">
             <div class="city-link-icon">🎠</div>
             <div class="city-link-text">
               <div class="link-title">Playground Equipment</div>
               <div class="link-url">/playground-equipment-sultanpur/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/outdoor-gym-sultanpur/" class="city-link">
             <div class="city-link-icon">🏋️</div>
             <div class="city-link-text">
               <div class="link-title">Outdoor Gym</div>
               <div class="link-url">/outdoor-gym-sultanpur/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/kids-furniture-sultanpur/" class="city-link">
             <div class="city-link-icon">🧒</div>
             <div class="city-link-text">
               <div class="link-title">Kids Furniture</div>
               <div class="link-url">/kids-furniture-sultanpur/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/school-setup-sultanpur/" class="city-link">
             <div class="city-link-icon">🏫</div>
             <div class="city-link-text">
               <div class="link-title">School Setup</div>
               <div class="link-url">/school-setup-sultanpur/</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -934,41 +1016,41 @@
           <span class="city-count">5 pages</span>
         </div>
         <div class="city-links">
-          <div class="city-link">
+          <a href="/school-furniture-lucknow/" class="city-link">
             <div class="city-link-icon">🪑</div>
             <div class="city-link-text">
               <div class="link-title">School Furniture</div>
               <div class="link-url">/school-furniture-lucknow/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/playground-equipment-lucknow/" class="city-link">
             <div class="city-link-icon">🎠</div>
             <div class="city-link-text">
               <div class="link-title">Playground Equipment</div>
               <div class="link-url">/playground-equipment-lucknow/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/outdoor-gym-lucknow/" class="city-link">
             <div class="city-link-icon">🏋️</div>
             <div class="city-link-text">
               <div class="link-title">Outdoor Gym</div>
               <div class="link-url">/outdoor-gym-lucknow/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/kids-furniture-lucknow/" class="city-link">
             <div class="city-link-icon">🧒</div>
             <div class="city-link-text">
               <div class="link-title">Kids Furniture</div>
               <div class="link-url">/kids-furniture-lucknow/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/school-setup-lucknow/" class="city-link">
             <div class="city-link-icon">🏫</div>
             <div class="city-link-text">
               <div class="link-title">School Setup</div>
               <div class="link-url">/school-setup-lucknow/</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -980,41 +1062,41 @@
           <span class="city-count">5 pages</span>
         </div>
         <div class="city-links">
-          <div class="city-link">
+          <a href="/school-furniture-gonda/" class="city-link">
             <div class="city-link-icon">🪑</div>
             <div class="city-link-text">
               <div class="link-title">School Furniture</div>
               <div class="link-url">/school-furniture-gonda/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/playground-equipment-gonda/" class="city-link">
             <div class="city-link-icon">🎠</div>
             <div class="city-link-text">
               <div class="link-title">Playground Equipment</div>
               <div class="link-url">/playground-equipment-gonda/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/outdoor-gym-gonda/" class="city-link">
             <div class="city-link-icon">🏋️</div>
             <div class="city-link-text">
               <div class="link-title">Outdoor Gym</div>
               <div class="link-url">/outdoor-gym-gonda/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/kids-furniture-gonda/" class="city-link">
             <div class="city-link-icon">🧒</div>
             <div class="city-link-text">
               <div class="link-title">Kids Furniture</div>
               <div class="link-url">/kids-furniture-gonda/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/school-setup-gonda/" class="city-link">
             <div class="city-link-icon">🏫</div>
             <div class="city-link-text">
               <div class="link-title">School Setup</div>
               <div class="link-url">/school-setup-gonda/</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -1026,41 +1108,41 @@
           <span class="city-count">5 pages</span>
         </div>
         <div class="city-links">
-          <div class="city-link">
+          <a href="/school-furniture-kanpur/" class="city-link">
             <div class="city-link-icon">🪑</div>
             <div class="city-link-text">
               <div class="link-title">School Furniture</div>
               <div class="link-url">/school-furniture-kanpur/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/playground-equipment-kanpur/" class="city-link">
             <div class="city-link-icon">🎠</div>
             <div class="city-link-text">
               <div class="link-title">Playground Equipment</div>
               <div class="link-url">/playground-equipment-kanpur/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/outdoor-gym-kanpur/" class="city-link">
             <div class="city-link-icon">🏋️</div>
             <div class="city-link-text">
               <div class="link-title">Outdoor Gym</div>
               <div class="link-url">/outdoor-gym-kanpur/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/kids-furniture-kanpur/" class="city-link">
             <div class="city-link-icon">🧒</div>
             <div class="city-link-text">
               <div class="link-title">Kids Furniture</div>
               <div class="link-url">/kids-furniture-kanpur/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/school-setup-kanpur/" class="city-link">
             <div class="city-link-icon">🏫</div>
             <div class="city-link-text">
               <div class="link-title">School Setup</div>
               <div class="link-url">/school-setup-kanpur/</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -1072,41 +1154,189 @@
           <span class="city-count">5 pages</span>
         </div>
         <div class="city-links">
-          <div class="city-link">
+          <a href="/school-furniture-noida/" class="city-link">
             <div class="city-link-icon">🪑</div>
             <div class="city-link-text">
               <div class="link-title">School Furniture</div>
               <div class="link-url">/school-furniture-noida/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/playground-equipment-noida/" class="city-link">
             <div class="city-link-icon">🎠</div>
             <div class="city-link-text">
               <div class="link-title">Playground Equipment</div>
               <div class="link-url">/playground-equipment-noida/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/outdoor-gym-noida/" class="city-link">
             <div class="city-link-icon">🏋️</div>
             <div class="city-link-text">
               <div class="link-title">Outdoor Gym</div>
               <div class="link-url">/outdoor-gym-noida/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/kids-furniture-noida/" class="city-link">
             <div class="city-link-icon">🧒</div>
             <div class="city-link-text">
               <div class="link-title">Kids Furniture</div>
               <div class="link-url">/kids-furniture-noida/</div>
             </div>
-          </div>
-          <div class="city-link">
+          </a>
+          <a href="/school-setup-noida/" class="city-link">
             <div class="city-link-icon">🏫</div>
             <div class="city-link-text">
               <div class="link-title">School Setup</div>
               <div class="link-url">/school-setup-noida/</div>
             </div>
-          </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bihar Regional Hubs -->
+    <div class="state-group-title">
+      <span>🌾 Bihar Regional Expansion Hubs</span>
+      <span class="badge" style="background: var(--accent-orange-light); color: var(--accent-orange);">3 Cities · 15 Pages</span>
+    </div>
+
+    <div class="city-columns">
+
+      <!-- Patna -->
+      <div class="city-block city-patna">
+        <div class="city-header">
+          <div class="city-dot"></div>
+          <h4>Patna</h4>
+          <span class="city-count">5 pages</span>
+        </div>
+        <div class="city-links">
+          <a href="/school-furniture-patna/" class="city-link">
+            <div class="city-link-icon">🪑</div>
+            <div class="city-link-text">
+              <div class="link-title">School Furniture</div>
+              <div class="link-url">/school-furniture-patna/</div>
+            </div>
+          </a>
+          <a href="/playground-equipment-patna/" class="city-link">
+            <div class="city-link-icon">🎠</div>
+            <div class="city-link-text">
+              <div class="link-title">Playground Equipment</div>
+              <div class="link-url">/playground-equipment-patna/</div>
+            </div>
+          </a>
+          <a href="/outdoor-gym-patna/" class="city-link">
+            <div class="city-link-icon">🏋️</div>
+            <div class="city-link-text">
+              <div class="link-title">Outdoor Gym</div>
+              <div class="link-url">/outdoor-gym-patna/</div>
+            </div>
+          </a>
+          <a href="/kids-furniture-patna/" class="city-link">
+            <div class="city-link-icon">🧒</div>
+            <div class="city-link-text">
+              <div class="link-title">Kids Furniture</div>
+              <div class="link-url">/kids-furniture-patna/</div>
+            </div>
+          </a>
+          <a href="/school-setup-patna/" class="city-link">
+            <div class="city-link-icon">🏫</div>
+            <div class="city-link-text">
+              <div class="link-title">School Setup</div>
+              <div class="link-url">/school-setup-patna/</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Muzaffarpur -->
+      <div class="city-block city-muzaffarpur">
+        <div class="city-header">
+          <div class="city-dot"></div>
+          <h4>Muzaffarpur</h4>
+          <span class="city-count">5 pages</span>
+        </div>
+        <div class="city-links">
+          <a href="/school-furniture-muzaffarpur/" class="city-link">
+            <div class="city-link-icon">🪑</div>
+            <div class="city-link-text">
+              <div class="link-title">School Furniture</div>
+              <div class="link-url">/school-furniture-muzaffarpur/</div>
+            </div>
+          </a>
+          <a href="/playground-equipment-muzaffarpur/" class="city-link">
+            <div class="city-link-icon">🎠</div>
+            <div class="city-link-text">
+              <div class="link-title">Playground Equipment</div>
+              <div class="link-url">/playground-equipment-muzaffarpur/</div>
+            </div>
+          </a>
+          <a href="/outdoor-gym-muzaffarpur/" class="city-link">
+            <div class="city-link-icon">🏋️</div>
+            <div class="city-link-text">
+              <div class="link-title">Outdoor Gym</div>
+              <div class="link-url">/outdoor-gym-muzaffarpur/</div>
+            </div>
+          </a>
+          <a href="/kids-furniture-muzaffarpur/" class="city-link">
+            <div class="city-link-icon">🧒</div>
+            <div class="city-link-text">
+              <div class="link-title">Kids Furniture</div>
+              <div class="link-url">/kids-furniture-muzaffarpur/</div>
+            </div>
+          </a>
+          <a href="/school-setup-muzaffarpur/" class="city-link">
+            <div class="city-link-icon">🏫</div>
+            <div class="city-link-text">
+              <div class="link-title">School Setup</div>
+              <div class="link-url">/school-setup-muzaffarpur/</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Gaya -->
+      <div class="city-block city-gaya">
+        <div class="city-header">
+          <div class="city-dot"></div>
+          <h4>Gaya &amp; Bodh Gaya</h4>
+          <span class="city-count">5 pages</span>
+        </div>
+        <div class="city-links">
+          <a href="/school-furniture-gaya/" class="city-link">
+            <div class="city-link-icon">🪑</div>
+            <div class="city-link-text">
+              <div class="link-title">School Furniture</div>
+              <div class="link-url">/school-furniture-gaya/</div>
+            </div>
+          </a>
+          <a href="/playground-equipment-gaya/" class="city-link">
+            <div class="city-link-icon">🎠</div>
+            <div class="city-link-text">
+              <div class="link-title">Playground Equipment</div>
+              <div class="link-url">/playground-equipment-gaya/</div>
+            </div>
+          </a>
+          <a href="/outdoor-gym-gaya/" class="city-link">
+            <div class="city-link-icon">🏋️</div>
+            <div class="city-link-text">
+              <div class="link-title">Outdoor Gym</div>
+              <div class="link-url">/outdoor-gym-gaya/</div>
+            </div>
+          </a>
+          <a href="/kids-furniture-gaya/" class="city-link">
+            <div class="city-link-icon">🧒</div>
+            <div class="city-link-text">
+              <div class="link-title">Kids Furniture</div>
+              <div class="link-url">/kids-furniture-gaya/</div>
+            </div>
+          </a>
+          <a href="/school-setup-gaya/" class="city-link">
+            <div class="city-link-icon">🏫</div>
+            <div class="city-link-text">
+              <div class="link-title">School Setup</div>
+              <div class="link-url">/school-setup-gaya/</div>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -1119,7 +1349,7 @@
     <div class="legend-items">
       <div class="legend-item">
         <div class="legend-swatch" style="background: var(--primary-blue);"></div>
-        Core Pages
+        Core &amp; Company
       </div>
       <div class="legend-item">
         <div class="legend-swatch" style="background: var(--outdoor-green);"></div>
@@ -1127,15 +1357,15 @@
       </div>
       <div class="legend-item">
         <div class="legend-swatch" style="background: var(--accent-orange);"></div>
-        Ayodhya / Kanpur
+        Ayodhya / Kanpur / Patna
       </div>
       <div class="legend-item">
         <div class="legend-swatch" style="background: var(--primary-blue);"></div>
-        Sultanpur / Gonda
+        Sultanpur / Gonda / Muzaffarpur
       </div>
       <div class="legend-item">
         <div class="legend-swatch" style="background: var(--outdoor-green);"></div>
-        Lucknow / Noida
+        Lucknow / Noida / Gaya
       </div>
       <div class="legend-item">
         <span class="priority-pill p-high">0.9</span>
@@ -1152,7 +1382,7 @@
 
 <!-- ——— Footer ——— -->
 <footer class="sitemap-footer">
-  <p>Generated from <strong>sitemap.xml</strong> &nbsp;·&nbsp; 49 pages &nbsp;·&nbsp; <strong>www.school-setup.com</strong></p>
+  <p>Generated from <strong>sitemap.xml</strong> &nbsp;·&nbsp; 66 pages &nbsp;·&nbsp; <strong>www.school-setup.com</strong></p>
 </footer>
 
 </body>
